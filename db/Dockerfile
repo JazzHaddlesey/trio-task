@@ -7,3 +7,8 @@
 # Add the content of the .sql file to your image
 # All scripts copied to docker-entrypoint-initdb.d/ are automatically
 # executed during container startup
+
+FROM mysql:5.7
+ENV MYSQL_DATABASE=trio_db
+COPY ./CreateTable.sql docker-entrypoint-initdb.d/CreateTable.sql
+
